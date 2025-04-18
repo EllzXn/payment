@@ -48,7 +48,7 @@ window.addEventListener('load', function() {
     input.select();
     document.execCommand('copy');
     document.body.removeChild(input);
-    showToast('Number copied to clipboard!');
+    showToast('Nomor telah disalin');
   }
 //chanell:https://whatsapp.com/channel/0029VanrndJICVfcrjFr3x2R//
   function showToast(message) {
@@ -65,5 +65,5 @@ window.addEventListener('load', function() {
     if (!selectedMethod) return showToast('Please select a payment method first.');
  //chanell:https://whatsapp.com/channel/0029VanrndJICVfcrjFr3x2R//   
     const phoneNumber = document.querySelector('.payment-info.active .account-number').textContent.replace(/-/g, '');
-    window.location.href = `tel:${phoneNumber}`;
+    window.location.href = `https://wa.me/62882019632673`;
   });
