@@ -1,0 +1,248 @@
+<!--
+   Created By Kai
+   Contact https://wa.me/6282126446272
+ 
+   Pake Sc Error? Join Saja Disini dan report menggunakan disqus yang disediakan di desk
+   > https://whatsapp.com/channel/0029VanrndJICVfcrjFr3x2R
+   > https://whatsapp.com/channel/0029VanrndJICVfcrjFr3x2R
+   > https://whatsapp.com/channel/0029VanrndJICVfcrjFr3x2R
+ 
+   Mau Jasa bikin web? porto? Chat Saja
+   Menerima tapi html css JavaScript aja soalnya yang lain malas
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metode Pembayaran EllzXn</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <div class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+  <div class="container">
+    <div class="header">
+      <h1>EllzXn</h1>
+      <p>Silahkan pilih metode pembayaran anda</p>
+    </div>
+    <div class="content">
+      <h2 class="section-title"><i class="fas fa-wallet"></i>Metode pembayaran</h2>
+      <div class="selected-method-indicator" id="selected-method-indicator">
+        <i class="fas fa-check-circle"></i> <span>Memilih: </span><strong id="selected-method-name">None</strong>
+      </div>
+      <div class="payment-methods">
+        <div class="method" data-type="dana" onclick="selectMethod('dana')">
+          <div class="method-icon">
+            <svg viewBox="0 0 60 60" width="60" height="60">
+              <rect width="60" height="60" rx="15" fill="#0081FF"/>
+              <rect x="15" y="22" width="30" height="25" rx="2" fill="white"/>
+              <rect x="15" y="13" width="30" height="9" rx="2" fill="#0081FF"/>
+              <path d="M22 32C22 30.3431 23.3431 29 25 29H35C36.6569 29 38 30.3431 38 32V35C38 36.1046 37.1046 37 36 37H24C22.8954 37 22 36.1046 22 35V32Z" fill="#0081FF"/>
+              <circle cx="30" cy="25" r="3" fill="#0081FF"/>
+            </svg>
+          </div>
+          <div class="method-name">DANA</div>
+        </div>
+        <div class="method" data-type="gopay" onclick="selectMethod('gopay')">
+          <div class="method-icon">
+            <svg viewBox="0 0 60 60" width="60" height="60">
+              <rect width="60" height="60" rx="15" fill="#00AA13"/>
+              <circle cx="30" cy="30" r="18" fill="white"/>
+              <path d="M23 26H37M23 30H37M23 34H32" stroke="#00AA13" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="method-name">GoPay</div>
+        </div>
+        <div class="method" data-type="ovo" onclick="selectMethod('ovo')">
+          <div class="method-icon">
+            <svg viewBox="0 0 60 60" width="60" height="60">
+              <rect width="60" height="60" rx="15" fill="#4C2F9B"/>
+              <circle cx="30" cy="23" r="10" fill="white"/>
+              <path d="M20 36C20 32.134 24.477 29 30 29C35.523 29 40 32.134 40 36V45H20V36Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="method-name">OVO</div>
+        </div>
+        <div class="method" data-type="qris" onclick="selectMethod('qris')">
+          <div class="method-icon">
+            <svg viewBox="0 0 60 60" width="60" height="60">
+              <rect width="60" height="60" rx="15" fill="#EE1C25"/>
+              <rect x="12" y="12" width="36" height="36" rx="3" fill="white"/>
+              <text x="30" y="36" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#EE1C25">LinkAja</text>
+              <text x="30" y="26" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle" fill="#EE1C25">QRIS</text>
+            </svg>
+          </div>
+          <div class="method-name">QRIS</div>
+        </div>
+      </div>
+      <div id="scroll-indicator" class="scroll-indicator hidden" onclick="scrollToPaymentInfo()">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="payment-info-container" id="payment-info-container">
+        <div id="dana-info" class="payment-info">
+          <div class="payment-info-header">
+            <div class="method-icon">
+              <svg viewBox="0 0 60 60" width="40" height="40">
+                <rect width="60" height="60" rx="15" fill="#0081FF"/>
+                <rect x="15" y="22" width="30" height="25" rx="2" fill="white"/>
+                <rect x="15" y="13" width="30" height="9" rx="2" fill="#0081FF"/>
+                <path d="M22 32C22 30.3431 23.3431 29 25 29H35C36.6569 29 38 30.3431 38 32V35C38 36.1046 37.1046 37 36 37H24C22.8954 37 22 36.1046 22 35V32Z" fill="#0081FF"/>
+                <circle cx="30" cy="25" r="3" fill="#0081FF"/>
+              </svg>
+            </div>
+            <h2>Detail pembayaran DANA</h2>
+          </div>
+          <div class="account-box">
+            <div class="account-label">
+              <i class="fas fa-phone"></i>Nomor DANA
+            </div>
+            <div class="account-number">0812-4562-9510</div>
+            <div class="account-name">
+              <i class="fas fa-user"></i>Nama akun: EllzXn
+            </div>
+            <button class="btn btn-copy" onclick="copyToClipboard('081245629510')">
+              <i class="fas fa-copy"></i>Salin nomor
+            </button>
+          </div>
+          <div class="divider"></div>
+          <div class="payment-instructions">
+            <h3>Cara Pembayaran</h3>
+            <ol>
+              <li>Buka aplikasi Dana</li>
+              <li>Tekan "Kirim" atau "Transfer"</li>
+              <li>Masukan nomor: <strong>0812-4562-9510</strong></li>
+              <li>Masukkan jumlah dan konfirmasi pembayaran</li>
+              <li>Jangan lupa menyimpan bukti pembayaran</li>
+            </ol>
+          </div>
+        </div>
+        <div id="gopay-info" class="payment-info">
+          <div class="payment-info-header">
+            <div class="method-icon">
+              <svg viewBox="0 0 60 60" width="40" height="40">
+                <rect width="60" height="60" rx="15" fill="#00AA13"/>
+                <circle cx="30" cy="30" r="18" fill="white"/>
+                <path d="M23 26H37M23 30H37M23 34H32" stroke="#00AA13" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h2>Detail pembayaran GoPay</h2>
+          </div>
+          <div class="account-box">
+            <div class="account-label">
+              <i class="fas fa-phone"></i>Nomor GoPay
+            </div>
+            <div class="account-number">Belum ada</div>
+            <div class="account-name">
+              <i class="fas fa-user"></i>Nama akun: Belum ada
+            </div>
+            <button class="btn btn-copy" onclick="copyToClipboard('Belum ada')">
+              <i class="fas fa-copy"></i>Salin nomor
+            </button>
+          </div>
+          <div class="divider"></div>
+          <div class="payment-instructions">
+            <h3>Cara Pembayaran</h3>
+            <ol>
+                <li>Buka aplikasi GoPay</li>
+                <li>Tekan "Kirim" atau "Transfer"</li>
+                <li>Masukan nomor: <strong>Belum ada</strong></li>
+                <li>Masukkan jumlah dan konfirmasi pembayaran</li>
+                <li>Jangan lupa menyimpan bukti pembayaran</li>
+            </ol>
+          </div>
+        </div>
+        <div id="ovo-info" class="payment-info">
+          <div class="payment-info-header">
+            <div class="method-icon">
+              <svg viewBox="0 0 60 60" width="40" height="40">
+                <rect width="60" height="60" rx="15" fill="#4C2F9B"/>
+                <circle cx="30" cy="23" r="10" fill="white"/>
+                <path d="M20 36C20 32.134 24.477 29 30 29C35.523 29 40 32.134 40 36V45H20V36Z" fill="white"/>
+              </svg>
+            </div>
+            <h2>Detail pembayaran OVO</h2>
+          </div>
+          <div class="account-box">
+            <div class="account-label">
+              <i class="fas fa-phone"></i>Nomor OVO
+            </div>
+            <div class="account-number">Belum ada</div>
+            <div class="account-name">
+              <i class="fas fa-user"></i>Nama akun: Belum ada
+            </div>
+            <button class="btn btn-copy" onclick="copyToClipboard('Belum ada')">
+              <i class="fas fa-copy"></i>Salin nomor
+            </button>
+          </div>
+          <div class="divider"></div>
+          <div class="payment-instructions">
+            <h3>Cara Pembayaran</h3>
+            <ol>
+                <li>Buka aplikasi OVO</li>
+                <li>Tekan "Transfer"</li>
+                <li>Masukan nomor: <strong>Belum ada</strong></li>
+                <li>Masukkan jumlah dan konfirmasi pembayaran</li>
+                <li>Jangan lupa menyimpan bukti pembayaran</li>
+            </ol>
+          </div>
+        </div>
+        <div id="qris-info" class="payment-info">
+          <div class="payment-info-header">
+            <div class="method-icon">
+              <svg viewBox="0 0 60 60" width="40" height="40">
+                <rect width="60" height="60" rx="15" fill="#EE1C25"/>
+                <rect x="12" y="12" width="36" height="36" rx="3" fill="white"/>
+                <text x="30" y="36" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#EE1C25">LinkAja</text>
+                <text x="30" y="26" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle" fill="#EE1C25">QRIS</text>
+              </svg>
+            </div>
+            <h2>Detail pembayaran QRIS</h2>
+          </div>
+          <div class="qr-container">
+            <img class="qr-image" src="/api/placeholder/240/240" alt="QRIS Payment QR Code">
+          </div>
+          <div class="account-box">
+            <div class="account-label">
+              <i class="fas fa-qrcode"></i>ID QRIS
+            </div>
+            <div class="account-number">ID720882019632673</div>
+            <div class="account-name">
+              <i class="fas fa-user"></i>Merchant: UperPay Go
+            </div>
+            <button class="btn btn-copy" onclick="copyToClipboard('ID720882019632673')">
+              <i class="fas fa-copy"></i>Salin ID
+            </button>
+          </div>
+          <div class="divider"></div>
+          <div class="payment-instructions">
+            <h3>Cara Pembayaran</h3>
+            <ol>
+              <li>Buka aplikasi yang mendukung pembayaran QRIS</li>
+              <li>Pilih "Scan QR" atau "QRIS"</li>
+              <li>Pindai kode QRIS</li>
+              <li>Masukkan jumlah dan konfirmasi pembayaran</li>
+              <li>Jangan lupa menyimpan bukti pembayaran</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <button id="confirm-button" class="btn" style="margin-top: 30px; display: none;">
+        <i class="fas fa-check-circle"></i>Konfirmasi pembayaran
+      </button>
+    </div>
+    <div class="footer">
+      <p><i class="fas fa-shield-alt"></i>Terima kasih telah bertransaksi</p>
+    </div>
+  </div>
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toast-message"></span>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
